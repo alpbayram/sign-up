@@ -1,0 +1,52 @@
+/* Regular */
+@font-face {
+	font-family: "UbuntuSubset";
+	src: local("Ubuntu"),
+		/* Sistemde varsa önce onu kullan */ url("Ubuntu-R-tr-en.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback; /* Font yüklenene kadar sistem fontu göster */
+}
+
+/* Bold */
+@font-face {
+	font-family: "UbuntuSubset";
+	src: local("Ubuntu Bold"),
+		/* Sistemde varsa önce onu kullan */ url("Ubuntu-B-tr-en.woff2") format("woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: fallback;
+}
+
+/* Italic */
+@font-face {
+	font-family: "UbuntuSubset";
+	src: local("Ubuntu Italic"),
+		/* Sistemde varsa önce onu kullan */ url("Ubuntu-I-tr-en.woff2") format("woff2");
+	font-weight: normal;
+	font-style: italic;
+	font-display: fallback;
+}
+
+* {
+	outline: 1px solid black;
+}
+body {
+	font-family: "UbuntuSubset", Verdana, Geneva, sans-serif;
+	width: 100dvw;
+	height: 100dvh;
+	display: flex;
+	
+}
+header {
+	flex-basis: 37.5%;
+}
+main {
+	display: flex;
+	flex-grow: 1;
+}
+body.dejavu-fallback {
+	line-height: 1.6;
+	letter-spacing: -0.95px;
+	word-spacing: -0.05px;
+}
