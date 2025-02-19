@@ -11,9 +11,14 @@
 body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
-	font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
+	font-family: "PTSans","PTSans-fallback-linux","PTSans-fallback",sans-serif;
 }
-
+.bold {
+	font-weight: 700;
+}
+.italic {
+	font-style: italic;
+}
 img,
 picture,
 video,
