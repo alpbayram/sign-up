@@ -26,22 +26,75 @@
 			<section class="section">
 				<form action="" method="post">
 					<div class="form-section-1">
-						<h5 class="header-2">Let's do this!</h5>
-						<fieldset>
-							<legend>Information</legend>
-							<input type="text" />
-							<input type="text" />
-							<input type="text" />
-							<input type="text" />
-						</fieldset>
-						<fieldset class="pass-field">
-							<legend>Password</legend>
-							<input type="text" />
-							<input type="text" />
-						</fieldset>
+						<h5 class="header-2 form-header">Let's do this!</h5>
+						<div class="form-input-container">
+							<div class="form-row-1">
+								<label for="first-name">FIRST NAME</label>
+								<input
+									tabindex="1"
+									class="first-name form-field"
+									required
+									pattern="[a-zA-ZçÇğĞıİöÖşŞüÜ]{3,20}"
+									placeholder="Mehmet"
+									type="text"
+									id="first-name"
+								/>
+								<span></span><label for="email">EMAIL</label>
+								<input
+									required
+									placeholder="example@example.com"
+									class="form-field email"
+									type="email"
+									id="email"
+									tabindex="3"
+								/><span></span><label for="pass">PASSWORD</label>
+								<input
+									pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"
+									tabindex="5"
+									class="form-field password"
+									placeholder="Password"
+									required
+									type="password"
+									id="pass"
+								/><span></span>
+							</div>
+							<div class="form-row-2">
+								<label for="last-name">LAST NAME</label>
+								<input
+									tabindex="2"
+									class="last-name form-field"
+									type="text"
+									required
+									pattern="^[a-zA-ZçÇğĞıİöÖşŞüÜ]{3,20}$"
+									placeholder="Yılmaz"
+									id="last-name"
+								/><span></span>
+								<label for="phone">PHONE NUMBER</label>
+								<input
+									class="form-field phone"
+									tabindex="4"
+									required
+									pattern="^(\d{3}\s\d{3}\s\d{4}|\d{10})$"
+									placeholder="555 555 5555"
+									type="tel"
+									id="phone"
+								/><span></span>
+
+								<label for="pass-confirm">CONFIRM PASSWORD</label>
+								<input
+									class="form-field password"
+									tabindex="6"
+									placeholder="Confirm Password"
+									pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"
+									required
+									type="password"
+									id="pass-confirm"
+								/><span></span>
+							</div>
+						</div>
 					</div>
 					<div class="form-section-2">
-						<button type="submit"></button>
+						<button type="button">Formu Gönder</button>
 						<p>Already have an account? <a href="login-page.html">Log in</a></p>
 					</div>
 				</form>

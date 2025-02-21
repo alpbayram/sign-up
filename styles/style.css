@@ -24,16 +24,10 @@
 @font-face {
 	font-family: "PTSans-fallback-linux";
 	src: local("Liberation Sans");
-	size-adjust: 96.6799%;
-	ascent-override: 105.2958%;
-	descent-override: 28.5477%;
 }
 @font-face {
 	font-family: "PTSans-fallback";
 	src: local("Arial");
-	size-adjust: 96.6799%;
-	ascent-override: 105.2958%;
-	descent-override: 28.5477%;
 }
 img {
 	block-size: auto;
@@ -44,7 +38,7 @@ img {
 	object-fit: cover;
 }
 * {
-	outline: 1px solid black;
+	/* outline: 1px solid black; */
 }
 
 body {
@@ -94,6 +88,18 @@ main {
 	background-color: white;
 	box-shadow: var(--shadow-elevation-medium);
 	flex: 6;
+	align-items: flex-start;
+}
+.form-header {
+	margin-top: 0.5em;
+}
+.form-input-container {
+	display: flex;
+	margin-bottom: 2em;
+	margin-top: 1em;
+	gap: 4rem;
+	min-width: 60%;
+	max-width: 100%;
 }
 .form-section-2 {
 	flex: 7;
@@ -108,7 +114,147 @@ button {
 	margin-bottom: 2em;
 	margin-top: 2em;
 }
-.header-2 {
+.form-row-1,
+.form-row-2 {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
 }
-.pass-field {
+label {
+	font-size: 0.7rem;
+	font-weight: bold;
+	font-family: Liberation Mono;
+	color: rgb(43, 42, 42);
+}
+input {
+	font-size: 0.875rem;
+	border: 1px solid rgb(180, 179, 179);
+	border-radius: 4px;
+}
+label:nth-child(4),
+label:nth-child(7) {
+	margin-top: 2.5em;
+}
+input + span {
+	position: relative;
+}
+.form-field:placeholder-shown + span::before {
+	
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Bu alan zorunludur. *";
+	font-weight: bold;
+	color: #000000;
+}
+
+.first-name:not(:focus):user-invalid + span::before {
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Adınızda yalnızca harf olmalı, en az 3 karakter gereklidir.";
+	font-weight: bold;
+	color: #ee4447;
+}
+.last-name:not(:focus):user-invalid + span::before {
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Soyadınızda yalnızca harf olmalı, en az 3 karakter gereklidir.";
+	font-weight: bold;
+	color: #ee4447;
+}
+.email:not(:focus):user-invalid + span::before {
+	font-size: 0.7rem;
+	position: absolute;
+	content: "E-posta adresiniz '@' ve alan adı içermelidir.";
+	font-weight: bold;
+	color: #ee4447;
+}
+.email:focus + span::before{
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Örnek: ornek@example.com";
+	font-weight: bold;
+	color: #000000;
+}
+.phone:not(:focus):user-invalid + span::before {
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Telefon numarasını '555 555 5555' formatında girin.";
+	font-weight: bold;
+	color: #ee4447;
+}
+.phone:focus + span::before{
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Format: 555 555 55 55";
+	font-weight: bold;
+	color: #000000;
+}
+.password:not(:focus):user-invalid + span::before {
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Şifre en az 8 karakter olmalı, bir büyük harf, bir küçük harf ve bir rakam içermelidir.";
+	font-weight: bold;
+	color: #ee4447;
+}
+.password:focus + span::before{
+	font-size: 0.7rem;
+	position: absolute;
+	content: "En az 8 karakter, 1 büyük harf, 1 küçük harf, 1 rakam";
+	font-weight: bold;
+	color: #000000;
+}
+.form-field:not(:focus):placeholder-shown:user-invalid + span::before{
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Lütfen alanı boş bırakmayınız.";
+	font-weight: bold;
+	color: #ee4447;
+}
+.form-field:not(:focus):user-invalid + span::after{
+	
+	content: url(/images/cancel1.svg);
+	position: absolute;
+	top: -26px;
+	right: 3px;
+}
+.form-field:placeholder-shown{
+	border: 2px solid rgb(180, 179, 179);
+}
+.form-field:not(:focus):user-invalid {
+	border: red 2px solid;
+}
+.form-field:not(:focus):valid{
+	border: green 2px solid;
+
+}
+.form-field:not(:focus):valid + span::after{
+	content: url(/images/check1.svg);
+	position: absolute;
+	top: -26px;
+	right: 3px;
+	
+	
+}
+#first-name:not(:focus):placeholder-shown + span::before{
+	
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Bu alan zorunludur. *";
+	font-weight: bold;
+	color: #000000;
+  }
+  
+  #first-name:not(:focus):placeholder-shown {
+	border: 2px solid rgb(180, 179, 179);
+  }
+.form-field:focus{
+	outline: 0;
+	border: blue 2px solid;
+}
+button{
+	background-color: #596d48;
+	color: white;
+	padding: 10px;
+	width: 200px;
+	line-height: 40px;
 }
