@@ -29,6 +29,10 @@
 	font-family: "PTSans-fallback";
 	src: local("Arial");
 }
+@font-face {
+	font-family: "Norse";
+	src: url(/fonts/Norse-Bold.otf);
+}
 img {
 	block-size: auto;
 	height: auto;
@@ -37,8 +41,9 @@ img {
 	min-width: 0;
 	object-fit: cover;
 }
+
 * {
-	/* outline: 1px solid black; */
+	/* outline: 1px solid black;  */
 }
 
 body {
@@ -48,14 +53,51 @@ body {
 
 aside {
 	display: flex;
-	flex: 1;
+	position: relative;
+	flex: 0.8;
+}
+.bu {
+	max-width: 18%;
+
+	min-width: 0;
+	object-fit: contain;
+}
+.image-text {
+	position: absolute;
+	display: flex;
+	color: white;
+	justify-content: center;
+	font-size: 5rem;
+	background-color: rgba(91, 81, 86, 0.6);
+	line-height: 2;
+	font-weight: bold;
+	left: 0;
+	right: 0;
+	font-family:Norse ;
+	top: 200px;
+}
+.credit{
+	position: absolute;
+	bottom: 0;
+	color: white;
+	right: 0;
+	left: 0;
+	text-align: center;
+	font-size: 0.8rem;
+	font-style: italic;
+}
+.credit-link{
+	text-decoration: underline;
+	color: white;
+	font-style: italic;
+	
 }
 main {
 	display: flex;
 	flex: 2;
 	flex-direction: column;
 	justify-content: center;
-	background-color: #c6c8ca;
+	background-color: #f9fafb;
 }
 .header,
 .section {
@@ -69,14 +111,16 @@ main {
 }
 .header-1 {
 	margin-bottom: 2em;
+	max-width: 50%;
+	text-wrap: auto;
 }
 .section {
 	flex-basis: 65%;
 }
 .form-section-1,
 .form-section-2,
-.header-1 {
-	padding-left: 2rem;
+.header {
+	padding-left: 3rem;
 }
 .form-section-1,
 .form-section-2 {
@@ -91,18 +135,18 @@ main {
 	align-items: flex-start;
 }
 .form-header {
-	margin-top: 0.5em;
+	margin-top: 1em;
 }
 .form-input-container {
 	display: flex;
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 	margin-top: 1em;
-	gap: 4rem;
-	min-width: 60%;
-	max-width: 100%;
+	gap: 3em;
+	width: max(60%, 30rem);
 }
 .form-section-2 {
 	flex: 7;
+	align-items: flex-start;
 }
 form {
 	display: flex;
@@ -111,7 +155,7 @@ form {
 }
 
 button {
-	margin-bottom: 2em;
+	margin-bottom: 1em;
 	margin-top: 2em;
 }
 .form-row-1,
@@ -138,15 +182,32 @@ label:nth-child(7) {
 input + span {
 	position: relative;
 }
-.form-field:placeholder-shown + span::before {
-	
-	font-size: 0.7rem;
+
+/* .form-field:placeholder-shown + span::before {
+	font-size: 0.6rem;
+	position: absolute;
+	content: "Bu alan zorunludur.";
+	font-weight: bold;
+	color: #000000;
+} */
+input[required].form-field:not(:focus):placeholder-shown + span::before {
+	font-size: 0.6rem;
 	position: absolute;
 	content: "Bu alan zorunludur. *";
+
 	font-weight: bold;
 	color: #000000;
 }
+input[required].form-field {
+	text-indent: 4px;
+}
 
+input[required].form-field:not(:focus):placeholder-shown {
+	border: 2px solid rgb(180, 179, 179);
+}
+input[required].form-field:not(:focus):placeholder-shown + span::after {
+	content: "";
+}
 .first-name:not(:focus):user-invalid + span::before {
 	font-size: 0.7rem;
 	position: absolute;
@@ -168,7 +229,21 @@ input + span {
 	font-weight: bold;
 	color: #ee4447;
 }
-.email:focus + span::before{
+.first-name:focus + span::before {
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Örnek: Mehmet";
+	font-weight: bold;
+	color: #000000;
+}
+.last-name:focus + span::before {
+	font-size: 0.7rem;
+	position: absolute;
+	content: "Örnek: Yılmaz";
+	font-weight: bold;
+	color: #000000;
+}
+.email:focus + span::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Örnek: ornek@example.com";
@@ -178,14 +253,14 @@ input + span {
 .phone:not(:focus):user-invalid + span::before {
 	font-size: 0.7rem;
 	position: absolute;
-	content: "Telefon numarasını '555 555 5555' formatında girin.";
+	content: "Telefon numarasını '5555555555' formatında girin.";
 	font-weight: bold;
 	color: #ee4447;
 }
-.phone:focus + span::before{
+.phone:focus + span::before {
 	font-size: 0.7rem;
 	position: absolute;
-	content: "Format: 555 555 55 55";
+	content: "Format: 5555555555";
 	font-weight: bold;
 	color: #000000;
 }
@@ -196,65 +271,64 @@ input + span {
 	font-weight: bold;
 	color: #ee4447;
 }
-.password:focus + span::before{
+.password:focus + span::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "En az 8 karakter, 1 büyük harf, 1 küçük harf, 1 rakam";
 	font-weight: bold;
 	color: #000000;
 }
-.form-field:not(:focus):placeholder-shown:user-invalid + span::before{
+.form-field:not(:focus):placeholder-shown:user-invalid + span::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Lütfen alanı boş bırakmayınız.";
 	font-weight: bold;
 	color: #ee4447;
 }
-.form-field:not(:focus):user-invalid + span::after{
-	
+.form-field:not(:focus):user-invalid + span::after {
 	content: url(/images/cancel1.svg);
 	position: absolute;
-	top: -26px;
+	top: -29px;
 	right: 3px;
 }
-.form-field:placeholder-shown{
+.form-field:placeholder-shown {
 	border: 2px solid rgb(180, 179, 179);
 }
 .form-field:not(:focus):user-invalid {
 	border: red 2px solid;
 }
-.form-field:not(:focus):valid{
+.form-field:not(:focus):valid {
 	border: green 2px solid;
-
 }
-.form-field:not(:focus):valid + span::after{
+.form-field:not(:focus):valid + span::after {
 	content: url(/images/check1.svg);
 	position: absolute;
-	top: -26px;
+	top: -29px;
 	right: 3px;
-	
-	
 }
-#first-name:not(:focus):placeholder-shown + span::before{
-	
-	font-size: 0.7rem;
-	position: absolute;
-	content: "Bu alan zorunludur. *";
-	font-weight: bold;
-	color: #000000;
-  }
-  
-  #first-name:not(:focus):placeholder-shown {
-	border: 2px solid rgb(180, 179, 179);
-  }
-.form-field:focus{
+
+.form-field:focus {
 	outline: 0;
 	border: blue 2px solid;
 }
-button{
-	background-color: #596d48;
+input {
+	line-height: 2;
+}
+button {
+	padding: 0.5em 4em;
 	color: white;
-	padding: 10px;
-	width: 200px;
-	line-height: 40px;
+	background-color: #596d48;
+	border: none;
+	border-radius: 6px;
+	font-size: 1.2rem;
+	box-shadow: var(--shadow-elevation-medium);
+	font-weight: bold;
+}
+.have-acc {
+	font-size: 1rem;
+}
+a {
+	text-decoration: none;
+	color: #596d48;
+	font-weight: bold;
 }

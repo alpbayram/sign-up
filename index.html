@@ -13,14 +13,22 @@
 		<script src="scripts/app.js" defer></script>
 	</head>
 	<body>
-		<aside class="wallpaper left-content"><img src="images/wallpaper2.jpg" alt="" /></aside>
+		<aside class="wallpaper left-content">
+			<div class="image-text">
+				<img class="bu" src="/images/odin-lined.png" alt="" />
+				<p>ODIN</p>
+			</div>
+			<p class="credit">Wallpaper Source: <a class="credit-link" href="https://consumer.huawei.com/en/support/content/en-us15995291/">Huawei Magazine Unlock</a></p>
+			<img src="images/wallpaper2.jpg" alt="" />
+		</aside>
 		<main class="right-content">
 			<header class="header">
 				<h5 class="header-1">
 					This is not a real online service! You know you need something like this in your
-					life to help you realize your deepest dreams. Sign up now to get started.
-					<br /><br />
-					You know you want to.
+					life to help you realize your deepest dreams.<br />Sign up
+					<span style="font-style: italic">now </span>to get started. <br /><br />
+					You <span style="font-style: italic; font-weight: bold">know </span> you want
+					to.
 				</h5>
 			</header>
 			<section class="section">
@@ -75,7 +83,7 @@
 									tabindex="4"
 									required
 									pattern="^(\d{3}\s\d{3}\s\d{4}|\d{10})$"
-									placeholder="555 555 5555"
+									placeholder="5555555555"
 									type="tel"
 									id="phone"
 								/><span></span>
@@ -95,7 +103,9 @@
 					</div>
 					<div class="form-section-2">
 						<button type="button">Formu Gönder</button>
-						<p>Already have an account? <a href="login-page.html">Log in</a></p>
+						<p class="have-acc">
+							Already have an account? <a href="login-page.html">Log in</a>
+						</p>
 					</div>
 				</form>
 			</section>
