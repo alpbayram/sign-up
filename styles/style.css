@@ -31,7 +31,7 @@
 }
 @font-face {
 	font-family: "Norse";
-	src: url(./fonts/Norse-Bold.otf);
+	src: url(../fonts/Norse-Bold.otf);
 }
 img {
 	block-size: auto;
@@ -286,7 +286,7 @@ input[required].form-field:not(:focus):placeholder-shown + span::after {
 	color: #ee4447;
 }
 .form-field:not(:focus):user-invalid + span::after {
-	content: url(./images/cancel1.svg);
+	content: url(../images/cancel1.svg);
 	position: absolute;
 	top: -29px;
 	right: 3px;
@@ -301,7 +301,7 @@ input[required].form-field:not(:focus):placeholder-shown + span::after {
 	border: green 2px solid;
 }
 .form-field:not(:focus):valid + span::after {
-	content: url(./images/check1.svg);
+	content: url(../images/check1.svg);
 	position: absolute;
 	top: -29px;
 	right: 3px;
