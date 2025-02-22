@@ -21,7 +21,7 @@
 body {
 	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
-	font-family: "PTSans", "PTSans-fallback-linux", "PTSans-fallback", sans-serif;
+	font-family: "Inter", "Inter-fallback-linux", "Inter-fallback", sans-serif;
 }
 .bold {
 	font-weight: 700;

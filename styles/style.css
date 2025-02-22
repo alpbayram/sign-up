@@ -1,37 +1,54 @@
 @font-face {
-	font-family: "PTSans";
-	src: local("PT Sans"), url("../fonts/PTSans-R.woff2") format("woff2");
-	font-weight: normal;
+	font-family: "Inter";
+	src: local("Inter"), local("Inter Regular"), url("../fonts/Inter-R.woff2") format("woff2");
+	font-weight: 400;
 	font-style: normal;
-	font-display: optional;
+	font-display: fallback;
 }
 
 @font-face {
-	font-family: "PTSans";
-	src: local("PT Sans Bold"), url("../fonts/PTSans-B.woff2") format("woff2");
-	font-weight: bold;
+	font-family: "Inter";
+	src: local("Inter Bold"), url("../fonts/Inter-B.woff2") format("woff2");
+	font-weight: 700;
 	font-style: normal;
-	font-display: swap;
+	font-display: fallback;
 }
 
 @font-face {
-	font-family: "PTSans";
-	src: local("PT Sans Italic"), url("../fonts/PTSans-I.woff2") format("woff2");
-	font-weight: normal;
+	font-family: "Inter";
+	src: local("Inter Italic"), url("../fonts/Inter-I.woff2") format("woff2");
+	font-weight: 400;
 	font-style: italic;
-	font-display: optional;
+	font-display: fallback;
 }
 @font-face {
-	font-family: "PTSans-fallback-linux";
+	font-family: "Inter";
+	src: local("Inter Bold Italic"), url("../fonts/Inter-BI.woff2") format("woff2");
+	font-weight: 700;
+	font-style: italic;
+	font-display: fallback;
+}
+@font-face {
+	font-family: "Inter-fallback-linux";
 	src: local("Liberation Sans");
 }
 @font-face {
-	font-family: "PTSans-fallback";
+	font-family: "Inter-fallback";
 	src: local("Arial");
 }
 @font-face {
 	font-family: "Norse";
-	src: url(../fonts/Norse-Bold.otf);
+	src: url("../fonts/Norse-R.woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-display: fallback;
+}
+@font-face {
+	font-family: "Norse";
+	src: url("../fonts/Norse-B.woff2");
+	font-weight: bold;
+	font-style: normal;
+	font-display: fallback;
 }
 img {
 	block-size: auto;
@@ -73,10 +90,10 @@ aside {
 	font-weight: bold;
 	left: 0;
 	right: 0;
-	font-family:Norse ;
+	font-family: "Norse", "Inter", "Inter-fallback-linux", "Inter-fallback", sans-serif;
 	top: 200px;
 }
-.credit{
+.credit {
 	position: absolute;
 	bottom: 0;
 	color: white;
@@ -86,11 +103,10 @@ aside {
 	font-size: 0.8rem;
 	font-style: italic;
 }
-.credit-link{
+.credit-link {
 	text-decoration: underline;
 	color: white;
 	font-style: italic;
-	
 }
 main {
 	display: flex;
@@ -167,7 +183,7 @@ button {
 label {
 	font-size: 0.7rem;
 	font-weight: bold;
-	font-family: Liberation Mono;
+	font-family: norse;
 	color: rgb(43, 42, 42);
 }
 input {
