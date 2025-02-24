@@ -198,7 +198,8 @@ label:nth-child(7) {
 input + span {
 	position: relative;
 }
-
+.form-field {
+}
 /* .form-field:placeholder-shown + span::before {
 	font-size: 0.6rem;
 	position: absolute;
@@ -304,8 +305,9 @@ input[required].form-field:not(:focus):placeholder-shown + span::after {
 .form-field:not(:focus):user-invalid + span::after {
 	content: url(../images/cancel1.svg);
 	position: absolute;
-	top: -29px;
+	top:  -30px;
 	right: 3px;
+	width: 24px;
 }
 .form-field:placeholder-shown {
 	border: 2px solid rgb(180, 179, 179);
@@ -319,16 +321,28 @@ input[required].form-field:not(:focus):placeholder-shown + span::after {
 .form-field:not(:focus):valid + span::after {
 	content: url(../images/check1.svg);
 	position: absolute;
-	top: -29px;
+
+	top: -30px;
 	right: 3px;
+	width: 24px;
 }
 
+.phone.form-field:focus:valid + span::after {
+	content: url(../images/check1.svg);
+	position: absolute;
+	top: -30px;
+	right: 3px;
+	width: 24px;
+}
+.phone.form-field:focus:valid {
+	border: green 2px solid;
+}
 .form-field:focus {
 	outline: 0;
 	border: blue 2px solid;
 }
 input {
-	line-height: 2;
+	line-height: 30px;
 }
 button {
 	padding: 0.5em 4em;
