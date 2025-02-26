@@ -18,7 +18,14 @@
 				<img class="bu" src="./images/odin-lined.avif" alt="" />
 				<p>ODIN</p>
 			</div>
-			<p class="credit">Wallpaper Source: <a class="credit-link" href="https://consumer.huawei.com/en/support/content/en-us15995291/">Huawei Magazine Unlock</a></p>
+			<p class="credit">
+				Wallpaper Source:
+				<a
+					class="credit-link"
+					href="https://consumer.huawei.com/en/support/content/en-us15995291/"
+					>Huawei Magazine Unlock</a
+				>
+			</p>
 			<img src="./images/wallpaper1.avif" alt="" />
 		</aside>
 		<main class="right-content">
@@ -38,7 +45,7 @@
 						<div class="form-input-container">
 							<div class="form-row-1">
 								<label for="first-name">FIRST NAME</label>
-								<input
+								<div class="phone-div">	<input
 									tabindex="1"
 									class="first-name form-field"
 									required
@@ -46,17 +53,21 @@
 									placeholder="Mehmet"
 									type="text"
 									id="first-name"
-								/>
-								<span></span><label for="email">EMAIL</label>
-								<input
+								/> <span class="checkmark"></span>
+								<span class="info"></span> </div>
+							
+								<label for="email">EMAIL</label>
+								<div class="phone-div"><input
 									required
 									placeholder="example@example.com"
 									class="form-field email"
 									type="email"
 									id="email"
 									tabindex="3"
-								/><span></span><label for="pass">PASSWORD</label>
-								<input
+								/> <span class="checkmark"></span>
+									<span class="info"></span></div>
+								<label for="pass">PASSWORD</label>
+								 <div class="phone-div"><input
 									pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$"
 									tabindex="5"
 									class="form-field password"
@@ -64,32 +75,41 @@
 									required
 									type="password"
 									id="pass"
-								/><span></span>
+								/> <span class="checkmark"></span>
+								<span class="info"></span></div>
+								
 							</div>
 							<div class="form-row-2">
 								<label for="last-name">LAST NAME</label>
-								<input
-									tabindex="2"
-									class="last-name form-field"
-									type="text"
-									required
-									pattern="^[a-zA-ZçÇğĞıİöÖşŞüÜ]{3,20}$"
-									placeholder="Yılmaz"
-									id="last-name"
-								/><span></span>
+								<div class="phone-div">
+									<input
+										tabindex="2"
+										class="last-name form-field"
+										type="text"
+										required
+										pattern="^[a-zA-ZçÇğĞıİöÖşŞüÜ]{3,20}$"
+										placeholder="Yılmaz"
+										id="last-name"
+									/><span class="checkmark"></span> <span class="info"></span>
+								</div>
+
 								<label for="phone">PHONE NUMBER</label>
-								<input
-									class="form-field phone"
-									tabindex="4"
-									required
-									pattern="^(\d{3}\s\d{3}\s\d{4}|\d{10})$"
-									placeholder="5555555555"
-									type="tel"
-									id="phone"
-								/><span></span>
+								<div class="phone-div">
+									<input
+										class="form-field phone"
+										tabindex="4"
+										required
+										pattern="^(\d{3}\s\d{3}\s\d{4}|\d{10})$"
+										placeholder="5555555555"
+										type="tel"
+										id="phone"
+									/>
+									<span class="checkmark"></span>
+								<span class="info"></span> 
+								</div>
 
 								<label for="pass-confirm">CONFIRM PASSWORD</label>
-								<input
+								<div class="phone-div"><input
 									class="form-field password"
 									tabindex="6"
 									placeholder="Confirm Password"
@@ -97,8 +117,10 @@
 									required
 									type="password"
 									id="pass-confirm"
-								/><span></span>
-							</div>
+								/> <span class="checkmark"></span>
+								<span class="info"></span> 
+							</div></div>
+								
 						</div>
 					</div>
 					<div class="form-section-2">

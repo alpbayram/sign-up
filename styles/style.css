@@ -191,12 +191,14 @@ input {
 	border: 1px solid rgb(180, 179, 179);
 	border-radius: 4px;
 }
-label:nth-child(4),
-label:nth-child(7) {
+label{
 	margin-top: 2.5em;
 }
 input + span {
 	position: relative;
+}
+.info{
+	width: 1px;
 }
 .form-field {
 }
@@ -207,14 +209,15 @@ input + span {
 	font-weight: bold;
 	color: #000000;
 } */
-input[required].form-field:not(:focus):placeholder-shown + span::before {
+input[required].form-field:not(:focus):placeholder-shown ~ span.info::before {
 	font-size: 0.6rem;
 	position: absolute;
 	content: "Bu alan zorunludur. *";
-
+	
 	font-weight: bold;
 	color: #000000;
 }
+
 input[required].form-field {
 	text-indent: 4px;
 }
@@ -225,77 +228,77 @@ input[required].form-field:not(:focus):placeholder-shown {
 input[required].form-field:not(:focus):placeholder-shown + span::after {
 	content: "";
 }
-.first-name:not(:focus):user-invalid + span::before {
+.first-name:not(:focus):user-invalid ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Adınızda yalnızca harf olmalı, en az 3 karakter gereklidir.";
 	font-weight: bold;
 	color: #ee4447;
 }
-.last-name:not(:focus):user-invalid + span::before {
+.last-name:not(:focus):user-invalid ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Soyadınızda yalnızca harf olmalı, en az 3 karakter gereklidir.";
 	font-weight: bold;
 	color: #ee4447;
 }
-.email:not(:focus):user-invalid + span::before {
+.email:not(:focus):user-invalid ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "E-posta adresiniz '@' ve alan adı içermelidir.";
 	font-weight: bold;
 	color: #ee4447;
 }
-.first-name:focus + span::before {
+.first-name:focus ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Örnek: Mehmet";
 	font-weight: bold;
 	color: #000000;
 }
-.last-name:focus + span::before {
+.last-name:focus ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Örnek: Yılmaz";
 	font-weight: bold;
 	color: #000000;
 }
-.email:focus + span::before {
+.email:focus ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Örnek: ornek@example.com";
 	font-weight: bold;
 	color: #000000;
 }
-.phone:not(:focus):user-invalid + span::before {
+.phone:not(:focus):user-invalid ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Telefon numarasını '5555555555' formatında girin.";
 	font-weight: bold;
 	color: #ee4447;
 }
-.phone:focus + span::before {
+.phone:focus ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Format: 5555555555";
 	font-weight: bold;
 	color: #000000;
 }
-.password:not(:focus):user-invalid + span::before {
+.password:not(:focus):user-invalid ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Şifre en az 8 karakter olmalı, bir büyük harf, bir küçük harf ve bir rakam içermelidir.";
 	font-weight: bold;
 	color: #ee4447;
 }
-.password:focus + span::before {
+.password:focus ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "En az 8 karakter, 1 büyük harf, 1 küçük harf, 1 rakam";
 	font-weight: bold;
 	color: #000000;
 }
-.form-field:not(:focus):placeholder-shown:user-invalid + span::before {
+.form-field:not(:focus):placeholder-shown:user-invalid ~ span.info::before {
 	font-size: 0.7rem;
 	position: absolute;
 	content: "Lütfen alanı boş bırakmayınız.";
@@ -305,8 +308,10 @@ input[required].form-field:not(:focus):placeholder-shown + span::after {
 .form-field:not(:focus):user-invalid + span::after {
 	content: url(../images/cancel1.svg);
 	position: absolute;
-	top:  -30px;
-	right: 3px;
+	top: 50%;
+	right: 4px;
+	transform: translateY(-50%);
+	height: 24px;
 	width: 24px;
 }
 .form-field:placeholder-shown {
@@ -318,21 +323,39 @@ input[required].form-field:not(:focus):placeholder-shown + span::after {
 .form-field:not(:focus):valid {
 	border: green 2px solid;
 }
-.form-field:not(:focus):valid + span::after {
+.form-field:not(:focus):valid + span::after{
 	content: url(../images/check1.svg);
 	position: absolute;
-
-	top: -30px;
-	right: 3px;
+	top: 50%;
+	right: 4px;
+	transform: translateY(-50%);
+	height: 24px;
 	width: 24px;
 }
 
 .phone.form-field:focus:valid + span::after {
 	content: url(../images/check1.svg);
 	position: absolute;
-	top: -30px;
-	right: 3px;
+	top: 50%;
+	right: 4px;
+	transform: translateY(-50%);
+	height: 24px;
 	width: 24px;
+}
+.phone-div {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.phone-div {
+	& span.checkmark {
+		width: 0px;
+	}
+	
+}
+.phone-div input {
+	flex-basis: 100%;
+	flex-shrink: 0;
 }
 .phone.form-field:focus:valid {
 	border: green 2px solid;
@@ -342,7 +365,8 @@ input[required].form-field:not(:focus):placeholder-shown + span::after {
 	border: blue 2px solid;
 }
 input {
-	line-height: 30px;
+	line-height: 2.4;
+	padding-right: 28px;
 }
 button {
 	padding: 0.5em 4em;
