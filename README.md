@@ -1,39 +1,20 @@
-# Sign Up Projesi
+# Sign Up
 
-Bu proje, [The Odin Project](https://www.theodinproject.com/) kapsamındaki HTML ve CSS becerilerini geliştirmek amacıyla oluşturulan bir "Sign Up" projesidir.
-
-
-## İçerik
-
-- [Demo](#demo)
-- [Özellikler](#özellikler)
-- [Kullanılan Teknolojiler](#kullanılan-teknolojiler)
-- [İletişim](#iletişim)
-
-
-## Demo
-
-Projenin canlı demosu için [buraya tıklayın](https://alpbayram.me/).
-
+Bu proje, HTML, CSS ve JavaScript kullanılarak oluşturulmuş basit bir kayıt formu uygulamasıdır. Amacım, temel web teknolojilerini kullanarak kullanıcı dostu bir kayıt ekranı geliştirebilmektir.
 
 ## Özellikler
-
-- Temiz ve modern tasarım
-- Responsive (Mobil uyumlu) yapı
-- HTML5 ve CSS3 ile kodlanmış
-- Kullanıcı dostu arayüz
-
+- **Form Doğrulama:** Girdi alanları (isim, e-posta, telefon numarası, şifre) basit doğrulama kontrolleri içerir.
+- **Responsive Tasarım:** Farklı ekran boyutlarına uyum sağlayan düzen.
+- **Özelleştirilmiş Yazı Tipleri:** Self-hosted fontlarla sade ve modern bir görünüm hedeflenmiştir.
 
 ## Kullanılan Teknolojiler
+- **HTML5, CSS3 ve JavaScript:** Projede temel web teknolojileri kullanılmıştır.
+- **CSS Reset:** Tarayıcılar arası tutarlılığı sağlamak için reset dosyası kullanılmıştır.
+- **Self-Hosted Fontlar:** Projede kullanılan özel yazı tipleri dosyalar aracılığıyla yüklenmektedir.
 
-- HTML5
-- CSS3
+## Notlar
+Bu projede elde ettiğim tecrübeleri sade bir uygulama üzerinden göstermeye çalıştım. İlerleyen dönemlerde geliştirme ve iyileştirme çalışmaları yapmayı planlıyorum.
 
-## Iletişim
-
-Projeyle ilgili herhangi bir sorunuz olursa benimle iletişime geçebilirsiniz:
-
-- E-posta: alperen-bayram@hotmail.com
-- GitHub: [@alpbayram](https://github.com/alpbayram)
-
-Teşekkürler!
+## Canlı Proje
+Projenin canlı halini şu adresten görebilirsiniz:  
+[https://alpbayram.github.io/sign-up/](https://alpbayram.github.io/sign-up/)
